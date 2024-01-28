@@ -23,7 +23,9 @@ public sealed class TerminatorSystem : EntitySystem
 
     private void OnMapInit(EntityUid uid, TerminatorComponent comp, MapInitEvent args)
     {
-        // cyborg doesn't need to breathe
+        // cyborg doesn't need to eat, drink or breathe
+        RemComp<HungerComponent>(uid);
+        RemComp<ThirstComponent>(uid);
         RemComp<RespiratorComponent>(uid);
     }
 
