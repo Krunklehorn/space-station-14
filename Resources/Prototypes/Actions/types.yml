@@ -61,6 +61,8 @@
       state: explosive
     event: !type:ActivateImplantEvent
 
+# Currently disabled to prevent accidental use
+# /suicide instead
 - type: entity
   id: ActionActivateDeathAcidifier
   name: Activate Death-Acidifier
