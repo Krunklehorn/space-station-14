@@ -1,3 +1,4 @@
+using Content.Shared.Containers.ItemSlots;
 using Content.Server.Nutrition.Components;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Nutrition.EntitySystems;
@@ -33,6 +34,9 @@ namespace Content.Server.Nutrition.EntitySystems
         /// </summary>
         private void OnAfterInteract(EntityUid uid, UtensilComponent component, AfterInteractEvent ev)
         {
+            if (ev.Handled)
+                return;
+
             if (ev.Target == null || !ev.CanReach)
                 return;
 
