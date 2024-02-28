@@ -829,6 +829,10 @@
     size: Normal
     sprite: Objects/Fun/toys.rsi
     heldPrefix: foamcrossbow
+  - type: Tag
+    tags:
+    - Sidearm
+    - ToySidearm
   - type: Gun
     fireRate: 0.5
     selectedMode: SemiAuto
@@ -874,6 +878,7 @@
   - type: Tag
     tags:
     - Sidearm
+    - ToySidearm
   - type: Gun
     selectedMode: SemiAuto
     availableModes:
@@ -906,14 +911,14 @@
   suffix: Fake
   description: Looks almost like the real thing! Ages 8 and up.
   components:
-    - type: RevolverAmmoProvider
-      whitelist:
-        tags:
-          - CartridgeCap
-          - SpeedLoaderCap
-          - CartridgeMagnum
-          - SpeedLoaderMagnum
-      proto: CartridgeMagnumAP
+  - type: RevolverAmmoProvider
+    whitelist:
+      tags:
+        - CartridgeCap
+        - SpeedLoaderCap
+        - CartridgeMagnum
+        - SpeedLoaderMagnum
+    proto: CartridgeMagnumAP
 
 - type: entity
   parent: BaseItem
@@ -1369,6 +1374,8 @@
         reagents:
         - ReagentId: Nothing
           Quantity: 100
+  - type: Tag
+    - Plastic
 
 - type: entity
   parent: DrinkBase
