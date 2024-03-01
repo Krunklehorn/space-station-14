@@ -50,7 +50,7 @@ public sealed partial class ImplanterSystem : SharedImplanterSystem
 
                 // optionally, show popup to explain why the implant failed
                 var ev = new PopupAfterFailedImplantEvent(args.User, target, implant.Value);
-                RaiseLocalEvent(target, ev);
+                RaiseLocalEvent(target, ref ev);
                 if (!ev.Handled)
                 {
                     // show generic popup saying the implant failed

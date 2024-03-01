@@ -226,17 +226,11 @@ public sealed class AddImplantAttemptEvent : CancellableEntityEventArgs
     }
 }
 
-public sealed class PopupAfterFailedImplantEvent : CancellableEntityEventArgs
+[ByRefEvent]
+public struct PopupAfterFailedImplantEvent(EntityUid user, EntityUid target, EntityUid implant)
 {
-    public readonly EntityUid User;
-    public readonly EntityUid Target;
-    public readonly EntityUid Implant;
+    public readonly EntityUid User = user;
+    public readonly EntityUid Target = target;
+    public readonly EntityUid Implant = implant;
     public bool Handled = false;
-
-    public PopupAfterFailedImplantEvent(EntityUid user, EntityUid target, EntityUid implant)
-    {
-        User = user;
-        Target = target;
-        Implant = implant;
-    }
 }
